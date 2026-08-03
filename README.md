@@ -1,30 +1,27 @@
-# Bookshop
+# JobTracker
 
-- This project demonstrates core and practical front-end JavaScript skills, focusing on dynamic content handling, user interaction, and real-time UI updates.
+- Lightweight job-application tracker built with React and Vite. This project demonstrates component-driven UI, simple client-side navigation without an external router, and accessibility-minded styling..
 
 ## Live Demo
 
-- [https://matyaselit07.github.io/Book_Shop_Portfolio_work/]
+- [https://matyaselit07.github.io/.../]
 
 ## Main functions
 
 The project showcases:
 
-- Real-time search and filtering
-- Dynamic DOM rendering
-- Event-driven programming
-- Conditional UI logic
-- Practical use of array methods
+- Dashboard summary of applications, interviews, and offers
+- Simple tab-style navigation implemented with component state (no react-router)
+- Component-based structure (Header, Summary, pages)
+- Mobile-first responsive layout and basic accessibility considerations
 
 ## Preview
 
-![Screenshot](/images/book_shop_screenshot.png)
+![Screenshot](/src/assets/...)
 
 ## Technologies and resources
 
 ### Images
-
-- Unsplash: https://unsplash.com/s/photos/book-cover
 
 ### Icons
 
@@ -39,10 +36,6 @@ The project showcases:
 
 ## Libraries
 
-- **dayjs** – lightweight date library
-  - GitHub: https://github.com/iamkun/dayjs
-  - License: MIT
-  - Copyright (c) 2018-present, iamkun
 
 ## Description
 
