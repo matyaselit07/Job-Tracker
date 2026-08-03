@@ -1,0 +1,52 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.header-sections {
+  background-color: white;
+  border-bottom: 2px solid gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  cursor: pointer;
+}
+
+.section-middle-div {
+  padding: 1rem;
+}
+
+.bell-img {
+  padding: 0.5rem;
+}
+
+.bell-img:hover {
+  background-color: var(--color-primary);
+  border-radius: 50px;
+  animation: pulse 1s ease-in-out infinite;
+  transition: background-color 0.5s;
+}
