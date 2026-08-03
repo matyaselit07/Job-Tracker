@@ -1,0 +1,120 @@
+.summary {
+  padding: 1rem;
+}
+
+.summary-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+
+.summary-section-left {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.summary-text {
+  color: gray;
+  letter-spacing: -0.5px;
+}
+
+.summary-img {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.summary-section-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.summary-section-right div {
+  display: flex;
+  background-color: var(--color-secondary);
+  padding: 0.6rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.summary-button {
+  background-color: rgb(25, 113, 255);
+  color: var(--color-secondary);
+  padding: 0.7rem;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.summary-button:hover {
+  background-color: rgb(9, 37, 255);
+  transition: 0.5s;
+}
+
+/* Summary form */
+.summary-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  border: 1px solid gray;
+  border-radius: 12px;
+}
+
+.summary-form input,
+.summary-form select {
+  width: 18rem;
+  padding: 0.75rem;
+  margin: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.summary-submit {
+  background-color: rgb(25, 113, 255);
+  color: var(--color-secondary);
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.summary-submit:hover {
+  background-color: rgb(9, 37, 255);
+}
+
+.summary-container-statistics {
+  min-width: 18%;
+  font-size: 0.8rem;
+  color: gray;
+  background-color: var(--color-secondary);
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 1px solid rgb(169, 169, 169);
+  border-radius: 10px;
+}
+
+.summary-container-statistics p {
+  color: black;
+  font-size: 1.5rem;
+}
+
+/* Responsivity */
+@media (max-width: 750px) {
+  .summary-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .summary-container-statistics {
+    width: 200px;
+  }
+}

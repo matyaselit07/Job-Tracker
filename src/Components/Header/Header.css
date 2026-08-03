@@ -11,25 +11,27 @@
 }
 
 img {
-  width: 50px;
-  height: 50px;
-  margin: 0.5rem;
+  width: 45px;
+  height: 45px;
+  margin: 0.7rem;
   cursor: pointer;
 }
 
 .header-sections {
-  background-color: white;
-  border-bottom: 2px solid gray;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  border-bottom: 2px solid gray;
+  position: relative;
+  z-index: 20;
 }
 
 .section {
-  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .section-title {
@@ -38,15 +40,103 @@ img {
 
 .section-middle-div {
   padding: 1rem;
+  margin: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
-.bell-img {
-  padding: 0.5rem;
+.section-middle-div:hover {
+  background-color: var(--color-primary);
 }
+
+
+/* Hamburger-bar */
 
 .bell-img:hover {
   background-color: var(--color-primary);
   border-radius: 50px;
   animation: pulse 1s ease-in-out infinite;
   transition: background-color 0.5s;
+}
+
+/* Hamburger and mobile nav */
+.hamburger-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 36px;
+  height: 30px;
+  padding: 0.3rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+}
+
+.hamburger-button span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 100px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.hamburger-button.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Responsivity */
+@media (max-width: 850px) {
+  .hamburger-button {
+    display: flex;
+  }
+
+  .section-title {
+    visibility: collapse;
+  }
+
+  .section-middle {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-bottom: 2px solid gray;
+    z-index: 10;
+  }
+
+  .section-middle.mobile-open {
+    display: flex;
+  }
+
+  .section-middle-div {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /* keep desktop right icons visible */
+  .section-right {
+    display: none;
+    align-items: center;
+  }
 }
