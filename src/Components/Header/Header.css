@@ -39,6 +39,8 @@ img {
 }
 
 .section-middle-div {
+  font-size: 1.5rem;
+  font-weight: 500;
   padding: 1rem;
   margin: 1rem;
   border-radius: 15px;
@@ -134,7 +136,6 @@ img {
     text-align: center;
   }
 
-  /* keep desktop right icons visible */
   .section-right {
     display: none;
     align-items: center;

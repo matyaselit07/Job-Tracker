@@ -1,9 +1,10 @@
 import "./Header.css";
 
+import logo from "../../assets/logo.png";
+import bell from "../../assets/bell.svg";
+import user from "../../assets/user.svg";
+
 export default function Header({ onNavigate, activePage }) {
-  const logo = "./src/assets/logo.png";
-  const bell = "./src/assets/bell.svg";
-  const user = "./src/assets/user.svg";
 
   const navItems = [
     { label: "Dashboard", page: "dashboard" },
@@ -24,7 +25,7 @@ export default function Header({ onNavigate, activePage }) {
             className="section-middle-div"
             onClick={() => onNavigate(item.page)}
             style={{
-              fontWeight: activePage === item.page ? "bold" : "normal",
+              fontWeight: activePage === item.page ? "bold" : "",
               backgroundColor: activePage === item.page ? "whitesmoke" : "",
             }}
           >
