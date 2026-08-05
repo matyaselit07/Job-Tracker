@@ -36,8 +36,4 @@ The project showcases:
 
 ## Libraries
 
-
 ## Description
-
-The application simulates a simple online bookshop interface where users can browse, search, and filter books dynamically.  
-It focuses on clean UI updates and responsive user interactions without using frameworks.
