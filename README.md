@@ -1,10 +1,10 @@
 # JobTracker
 
-- Lightweight job-application tracker built with React and Vite. This project demonstrates component-driven UI, simple client-side navigation without an external router, and accessibility-minded styling..
+JobTracker is a lightweight React + Vite application for managing job applications. It presents a simple dashboard experience with page-based navigation, visual summaries, and a responsive layout for desktop and mobile screens.
 
 ## Live Demo
 
-- [https://matyaselit07.github.io/.../]
+- [https://matyaselit07.github.io/Job-Tracker/]
 
 ## Main functions
 
@@ -17,11 +17,35 @@ The project showcases:
 
 ## Preview
 
-![Screenshot](/src/assets/...)
+![Screenshot](/src/assets/job-tracker-screenshot.png)
 
-## Technologies and resources
+## Project Structure
 
-### Images
+The application is organized into a clear component-based structure to keep the interface modular and maintainable:
+
+
+src/
+├── app/                  
+├── assets/               
+├── components/           
+│   ├── Footer/
+│   ├── Header/
+│   ├── RecentApplications/
+│   └── Summary/
+├── pages/                
+│   ├── AnalyticsPage/
+│   ├── ApplicationsPage/
+│   └── DashboardPage/
+└── main.jsx              
+
+## Technologies and Resources
+
+- React 19
+- Vite
+- CSS for styling
+- gh-pages for deployment
+
+<!-- ### Images -->
 
 ### Icons
 
@@ -34,6 +58,10 @@ The project showcases:
   - URL: https://fonts.google.com/specimen/Roboto
   - License: Apache License 2.0
 
-## Libraries
+<!-- ## Libraries -->
 
 ## Description
+
+This is my first React web application deployed on GitHub Pages. 
+My main focus was understanding the deployment workflow and getting the application online successfully. 
+I will continue to update, improve, and expand this project.

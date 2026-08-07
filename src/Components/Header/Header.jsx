@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Header.css";
 
 import logo from "../../assets/logo.png";
@@ -5,6 +6,7 @@ import bell from "../../assets/bell.svg";
 import user from "../../assets/user.svg";
 
 export default function Header({ onNavigate, activePage }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { label: "Dashboard", page: "dashboard" },
@@ -18,12 +20,29 @@ export default function Header({ onNavigate, activePage }) {
         <img src={logo} alt="logo.png" />
         <h2 className="section-title">JobTracker</h2>
       </section>
-      <section className="section section-middle">
+
+      <button
+        type="button"
+        className={`hamburger-button ${isMenuOpen ? "open" : ""}`}
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+        aria-label="Toggle navigation"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <section
+        className={`section section-middle ${isMenuOpen ? "mobile-open" : ""}`}
+      >
         {navItems.map((item) => (
           <div
             key={item.page}
             className="section-middle-div"
-            onClick={() => onNavigate(item.page)}
+            onClick={() => {
+              onNavigate(item.page);
+              setIsMenuOpen(false);
+            }}
             style={{
               fontWeight: activePage === item.page ? "bold" : "",
               backgroundColor: activePage === item.page ? "whitesmoke" : "",
