@@ -23,20 +23,21 @@ The project showcases:
 
 The application is organized into a clear component-based structure to keep the interface modular and maintainable:
 
-
+```text
 src/
-├── app/                  
-├── assets/               
-├── components/           
+├── app/
+├── assets/
+├── components/
 │   ├── Footer/
 │   ├── Header/
 │   ├── RecentApplications/
 │   └── Summary/
-├── pages/                
+├── pages/
 │   ├── AnalyticsPage/
 │   ├── ApplicationsPage/
 │   └── DashboardPage/
-└── main.jsx              
+└── main.jsx
+```
 
 ## Technologies and Resources
 
@@ -62,6 +63,6 @@ src/
 
 ## Description
 
-This is my first React web application deployed on GitHub Pages. 
-My main focus was understanding the deployment workflow and getting the application online successfully. 
+This is my first React web application deployed on GitHub Pages.
+My main focus was understanding the deployment workflow and getting the application online successfully.
 I will continue to update, improve, and expand this project.
