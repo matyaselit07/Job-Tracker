@@ -1,3 +1,5 @@
+import "./DashboardPage.css";
+
 import { useState } from "react";
 import Summary from "../../Components/Summary/Summary";
 import RecentApplications from "../../Components/RecentApplications/RecentApplications";
@@ -78,7 +80,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div>
+    <div className="dashboard-page-div">
       <Summary
         onAddApplication={handleAddApplication}
         totalApplications={totalApplications}

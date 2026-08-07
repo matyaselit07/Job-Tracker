@@ -1,0 +1,10 @@
+.application-page-div {
+  width: 80%;
+  margin: auto;
+}
+
+@media (max-width: 2000px) {
+  .application-page-div {
+    width: 100%;
+  }
+}
