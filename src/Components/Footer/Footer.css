@@ -3,6 +3,7 @@ footer {
   position: static;
   bottom: 0;
   background-color: rgb(186, 186, 186);
+  margin-top: 12rem;
 }
 
 .footer-links {
