@@ -12,10 +12,10 @@ export default function Footer() {
           <img className="footer-logo" src={facebook} alt="facebook.svg" />
         </a>
         <a href="#">
-          <img className="footer-logo" src={instagram} alt="facebook.svg" />
+          <img className="footer-logo" src={instagram} alt="instagram.svg" />
         </a>
         <a href="#">
-          <img className="footer-logo" src={youtube} alt="facebook.svg" />
+          <img className="footer-logo" src={youtube} alt="youtube.svg" />
         </a>
       </div>
       <h3><a href="tel:+36702768140">+36 70 276 8140</a></h3>
