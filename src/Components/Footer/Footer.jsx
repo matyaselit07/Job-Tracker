@@ -18,8 +18,8 @@ export default function Footer() {
           <img className="footer-logo" src={youtube} alt="facebook.svg" />
         </a>
       </div>
-      <h3>+36 70 276 8140</h3>
-      <h3>matyaselit07@gmail.com</h3>
+      <h3><a href="tel:+36702768140">+36 70 276 8140</a></h3>
+      <h3><a href="mailto:matyaselit07@gmail.com">matyaselit07@gmail.com</a></h3>
       <h3>Copyright{new Date().getFullYear()}&copy;matyaselit07</h3>
     </footer>
   );
