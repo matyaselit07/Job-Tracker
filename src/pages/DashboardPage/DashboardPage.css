@@ -1,6 +1,6 @@
 .dashboard-page-div {
   width: 80%;
-  margin: auto;
+  margin: 0 auto 5rem auto;
 }
 
 @media (max-width: 2000px) {
