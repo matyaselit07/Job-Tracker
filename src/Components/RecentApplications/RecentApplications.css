@@ -58,6 +58,11 @@ select {
   width: auto;
 }
 
+h3 {
+  margin-left: 0.5rem;
+  padding-left: 0.7rem;
+}
+
 .status-pill {
   display: inline-block;
   padding: 0.35rem 0.75rem;
@@ -84,11 +89,6 @@ select {
 .status-pill.offer {
   background-color: rgb(0, 195, 0);
   color: green;
-}
-
-h3 {
-  margin-left: 0.5rem;
-  padding-left: 0.7rem;
 }
 
 /* Responsivity */
