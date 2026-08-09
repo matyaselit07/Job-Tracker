@@ -44,39 +44,31 @@ const initialApplications = [
 
 export default function DashboardPage() {
   const [applications, setApplications] = useState(initialApplications);
-  const [totalApplications, setTotalApplications] = useState(
-    initialApplications.length,
-  );
-  const [interviews, setInterviews] = useState(
-    initialApplications.filter((item) => item.status === "Interview").length,
-  );
-  const [offers, setOffers] = useState(
-    initialApplications.filter((item) => item.status === "Offer").length,
-  );
 
-  function updateStatusCounts(status) {
-    if (status === "Interview") {
-      setInterviews((prev) => prev + 1);
-    }
-    if (status === "Offer") {
-      setOffers((prev) => prev + 1);
-    }
-  }
+  const totalApplications = applications.length;
 
-  function updateTotals(application) {
-    setTotalApplications((prev) => prev + 1);
-    updateStatusCounts(application.status);
-  }
+  const interviews = applications.filter(
+    (application) => application.status === "Interview",
+  ).length;
+
+  const offers = applications.filter(
+    (application) => application.status === "Offer",
+  ).length;
 
   function handleAddApplication(application) {
     setApplications((prev) => [
       ...prev,
       {
         ...application,
-        id: prev.length > 0 ? prev[prev.length - 1].id + 1 : 0,
+        id: Date.now(),
       },
     ]);
-    updateTotals(application);
+  }
+
+  function handleDelete(id) {
+    setApplications((prevApplications) =>
+      prevApplications.filter((application) => application.id !== id),
+    );
   }
 
   return (
@@ -87,7 +79,8 @@ export default function DashboardPage() {
         interviews={interviews}
         offers={offers}
       />
-      <RecentApplications applications={applications} />
+
+      <RecentApplications applications={applications} onDelete={handleDelete} />
     </div>
   );
 }

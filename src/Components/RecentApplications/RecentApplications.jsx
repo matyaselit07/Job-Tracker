@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./RecentApplications.css";
 
-export default function RecentApplications({ applications }) {
+export default function RecentApplications({ applications, onDelete }) {
   const [filter, setFilter] = useState("All");
 
   function getStatusClass(status) {
@@ -29,6 +29,13 @@ export default function RecentApplications({ applications }) {
           <p className={getStatusClass(application.status)}>
             {application.status}
           </p>
+          <button
+            className="delete-button"
+            onClick={() => onDelete(application.id)}
+            aria-label={`Delete ${application.company} application`}
+          >
+            X
+          </button>
         </div>
       </li>
     );

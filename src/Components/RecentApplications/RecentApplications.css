@@ -35,6 +35,7 @@ select {
 }
 
 .section-center > p {
+  text-align: center;
   margin: 0 0.5rem;
 }
 
@@ -54,8 +55,10 @@ select {
 }
 
 .section-bottom-list li > * {
-  margin: 0;
   width: auto;
+  text-align: center;
+  margin: 0;
+  
 }
 
 h3 {
@@ -63,6 +66,7 @@ h3 {
   padding-left: 0.7rem;
 }
 
+/* Status pill */
 .status-pill {
   display: inline-block;
   padding: 0.35rem 0.75rem;
@@ -91,6 +95,21 @@ h3 {
   color: green;
 }
 
+/* Delete button */
+.delete-button {
+  color: rgb(130, 0, 0);
+  font-size: 1.5rem;
+  line-height: 1;
+  margin: 1rem;
+  border: none;
+  /* background: transparent; */
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  opacity: 0.6;
+}
+
 /* Responsivity */
 @media (max-width: 750px) {
   .section-top {
@@ -106,15 +125,16 @@ h3 {
 
 @media (max-width: 550px) {
   .section-center {
-    grid-template-columns: 1.5fr 1.5fr 1fr;
-  }
-
-  .section-center-status,
-  .section-bottom-list li div {
     display: none;
   }
 
+  /* .section-center-status,
+  .section-bottom-list li div {
+    display: none;
+  } */
+
   .section-bottom-list li {
-    grid-template-columns: 1.5fr 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 }
