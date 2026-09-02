@@ -7,20 +7,18 @@ import DashboardPage from "../pages/DashboardPage/DashboardPage";
 import ApplicationsPage from "../pages/ApplicationsPage/ApplicationsPage";
 import AnalyticsPage from "../pages/AnalyticsPage/AnalyticsPage";
 
-function App() {
+export default function App() {
   return (
-    <>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<AnalyticsPage />} />
-          <Route path="applications" element={<ApplicationsPage />} />
-          <Route path="dashboard" element={<DashboardPage />} />
-        </Routes>
-      </BrowserRouter>
+
+      <Routes>
+        <Route path="/" element={<DashboardPage />} />
+        <Route path="/applications" element={<ApplicationsPage />} />
+        <Route path="/analytics" element={<AnalyticsPage />} />
+      </Routes>
+
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
-
-export default App;

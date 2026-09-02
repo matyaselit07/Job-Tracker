@@ -15,6 +15,11 @@
   margin-bottom: 1rem;
 }
 
+h1 {
+  align-self: center;
+  font-size: 2rem;
+}
+
 .summary-text {
   color: gray;
   letter-spacing: -0.5px;
@@ -100,8 +105,14 @@
   background-color: var(--color-secondary);
   padding: 1rem;
   margin: 0.5rem;
-  border: 1px solid rgb(169, 169, 169);
+  border: 2px solid rgb(169, 169, 169);
   border-radius: 10px;
+}
+
+.summary-container-statistics:hover {
+  border: 2px solid gray;
+  scale: 1.1;
+  transition: 1s;
 }
 
 .summary-container-statistics p {

@@ -1,17 +1,22 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import "./Header.css";
 
 import logo from "../../assets/logo.png";
 import bell from "../../assets/bell.svg";
 import user from "../../assets/user.svg";
 
-export default function Header({ onNavigate, activePage }) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const navItems = [
-    { label: "Dashboard", page: "dashboard" },
-    { label: "Applications", page: "applications" },
-    { label: "Analytics", page: "analytics" },
+    { label: "Dashboard", path: "/" },
+    { label: "Applications", path: "/applications" },
+    { label: "Analytics", path: "/analytics" },
   ];
 
   return (
@@ -37,21 +42,23 @@ export default function Header({ onNavigate, activePage }) {
       >
         {navItems.map((item) => (
           <div
-            key={item.page}
+            key={item.path}
             className="section-middle-div"
             onClick={() => {
-              onNavigate(item.page);
+              navigate(item.path);
               setIsMenuOpen(false);
             }}
             style={{
-              fontWeight: activePage === item.page ? "bold" : "",
-              backgroundColor: activePage === item.page ? "whitesmoke" : "",
+              fontWeight: location.pathname === item.path ? "bold" : "",
+              backgroundColor:
+                location.pathname === item.path ? "whitesmoke" : "",
             }}
           >
             {item.label}
           </div>
         ))}
       </section>
+
       <section className="section section-right">
         <img className="bell-img" src={bell} alt="bell.svg" />
         <img src={user} alt="user.svg" />

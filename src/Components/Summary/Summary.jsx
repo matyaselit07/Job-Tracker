@@ -7,8 +7,6 @@ export default function Summary({
   interviews,
   offers,
 }) {
-  const glass = "./src/assets/search.svg";
-
   const [showForm, setShowForm] = useState(false);
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
@@ -53,7 +51,6 @@ export default function Summary({
         </section>
       </div>
 
-      {/* Add new application */}
       {showForm && (
         <form className="summary-form" onSubmit={handleSubmit}>
           <input

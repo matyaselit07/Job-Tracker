@@ -12,10 +12,6 @@
   border-bottom: 2px solid gray;
 }
 
-h1 {
-  align-self: center;
-}
-
 select {
   font-weight: bold;
   padding: 0.5rem;
