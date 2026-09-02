@@ -37,7 +37,7 @@
   display: flex;
   background-color: var(--color-secondary);
   padding: 0.6rem;
-  border: 1px solid gray;
+  border: 2px solid gray;
   border-radius: 10px;
 }
 
@@ -53,6 +53,7 @@
 
 .summary-button:hover {
   background-color: rgb(9, 37, 255);
+  box-shadow: 5px 5px 1px gray;
   transition: 0.5s;
 }
 
@@ -63,7 +64,7 @@
   justify-content: center;
   padding: 1rem;
   background-color: var(--color-secondary);
-  border: 1px solid gray;
+  border: 2px solid gray;
   border-radius: 12px;
 }
 
@@ -73,7 +74,7 @@
   padding: 0.75rem;
   margin: 0.5rem;
   margin-bottom: 0.5rem;
-  border: 1px solid gray;
+  border: 2px solid gray;
   border-radius: 8px;
   background-color: white;
 }
@@ -89,6 +90,7 @@
 
 .summary-submit:hover {
   background-color: rgb(9, 37, 255);
+  box-shadow: 5px 5px 1px gray;
 }
 
 .summary-container-statistics {

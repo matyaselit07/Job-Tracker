@@ -8,13 +8,13 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-links">
-        <a href="#">
+        <a href="https://www.matyaselit.com/" target="blank">
           <img className="footer-logo" src={facebook} alt="facebook.svg" />
         </a>
-        <a href="#">
+        <a href="https://www.matyaselit.com/" target="blank">
           <img className="footer-logo" src={instagram} alt="instagram.svg" />
         </a>
-        <a href="#">
+        <a href="https://www.matyaselit.com/" target="blank">
           <img className="footer-logo" src={youtube} alt="youtube.svg" />
         </a>
       </div>
