@@ -1,0 +1,1 @@
+import{t as e}from"./index-BjaKqfz_.js";var t=e();function n(){return(0,t.jsx)(`div`,{className:`application-page-div`,children:(0,t.jsx)(`p`,{children:`Applications Page`})})}export{n as default};
