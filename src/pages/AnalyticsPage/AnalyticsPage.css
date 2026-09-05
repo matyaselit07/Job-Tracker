@@ -3,6 +3,33 @@
   margin: auto;
 }
 
+.analytics-page-div h1 {
+  margin-bottom: 2rem;
+}
+
+.analytics-charts {
+  display: flex;
+  flex-direction: row;
+}
+
+.analytics-chart-card {
+  width: 90%;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.analytics-chart-card h2 {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1600px) {
+  .analytics-charts {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 2000px) {
   .analytics-page-div {
     width: 100%;
