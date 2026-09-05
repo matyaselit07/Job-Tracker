@@ -14,7 +14,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { initialApplications } from "../../data/applications";
+import { getStoredApplications } from "../../data/applications";
 
 const statusColors = {
   Applied: "rgb(12, 65, 138)",
@@ -24,6 +24,7 @@ const statusColors = {
 };
 
 export default function AnalyticsPage() {
+  const [applications] = useState(getStoredApplications);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export default function AnalyticsPage() {
     return () => mediaQuery.removeEventListener("change", updateViewport);
   }, []);
 
-  const applicationsByDate = [...initialApplications]
+  const applicationsByDate = [...applications]
     .sort((firstApplication, secondApplication) =>
       firstApplication.date.localeCompare(secondApplication.date),
     )
@@ -46,7 +47,7 @@ export default function AnalyticsPage() {
     }));
 
   const applicationsByStatus = Object.entries(
-    initialApplications.reduce((statuses, application) => {
+    applications.reduce((statuses, application) => {
       statuses[application.status] = (statuses[application.status] || 0) + 1;
       return statuses;
     }, {}),

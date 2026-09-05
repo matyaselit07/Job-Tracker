@@ -17,12 +17,12 @@ footer {
   transition: 0.5s;
 }
 
-h3 {
+footer h3 {
   text-align: center;
   padding: 0.8rem 0;
 }
 
-h3 a {
+footer h3 a {
   text-decoration: none;
   color: black;
 }

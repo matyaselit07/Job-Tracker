@@ -13,7 +13,9 @@ export default function Summary({
   const [date, setDate] = useState("");
   const [status, setStatus] = useState("Applied");
 
-  const successRate = ((offers / totalApplications) * 100).toFixed(1);
+  const successRate = totalApplications
+    ? ((offers / totalApplications) * 100).toFixed(1)
+    : "0.0";
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -23,7 +25,7 @@ export default function Summary({
     }
 
     onAddApplication({ company, position, date, status });
-    // Clear intakes
+    // Clear inputs
     setCompany("");
     setPosition("");
     setDate("");
@@ -90,7 +92,7 @@ export default function Summary({
           Interviews <p>{interviews}</p>
         </div>
         <div className="summary-container-statistics">
-          Offers Recieved <p>{offers}</p>
+          Offers Received <p>{offers}</p>
         </div>
         <div className="summary-container-statistics">
           Success Rate <p>{successRate}%</p>
