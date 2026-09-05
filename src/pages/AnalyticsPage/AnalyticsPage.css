@@ -34,6 +34,10 @@
   margin-left: -1rem;
 }
 
+.analytics-chart-card .recharts-default-legend li + li {
+  margin: 1rem;
+}
+
 .mobile-status-summary {
   display: flex;
   flex-direction: column;
