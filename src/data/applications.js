@@ -35,3 +35,25 @@ export const initialApplications = [
     status: "Applied",
   },
 ];
+
+const applicationsStorageKey = "job-tracker-applications";
+
+export function getStoredApplications() {
+  const storedApplications = localStorage.getItem(applicationsStorageKey);
+
+  if (!storedApplications) {
+    saveApplications(initialApplications);
+    return initialApplications;
+  }
+
+  try {
+    return JSON.parse(storedApplications);
+  } catch {
+    saveApplications(initialApplications);
+    return initialApplications;
+  }
+}
+
+export function saveApplications(applications) {
+  localStorage.setItem(applicationsStorageKey, JSON.stringify(applications));
+}

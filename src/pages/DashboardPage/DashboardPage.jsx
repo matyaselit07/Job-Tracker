@@ -1,12 +1,19 @@
 import "./DashboardPage.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Summary from "../../Components/Summary/Summary";
 import RecentApplications from "../../Components/RecentApplications/RecentApplications";
-import { initialApplications } from "../../data/applications";
+import {
+  getStoredApplications,
+  saveApplications,
+} from "../../data/applications";
 
 export default function DashboardPage() {
-  const [applications, setApplications] = useState(initialApplications);
+  const [applications, setApplications] = useState(getStoredApplications);
+
+  useEffect(() => {
+    saveApplications(applications);
+  }, [applications]);
 
   const totalApplications = applications.length;
 
@@ -34,6 +41,16 @@ export default function DashboardPage() {
     );
   }
 
+  function handleEdit(updatedApplication) {
+    setApplications((prevApplications) =>
+      prevApplications.map((application) =>
+        application.id === updatedApplication.id
+          ? updatedApplication
+          : application,
+      ),
+    );
+  }
+
   return (
     <div className="dashboard-page-div">
       <Summary
@@ -43,7 +60,11 @@ export default function DashboardPage() {
         offers={offers}
       />
 
-      <RecentApplications applications={applications} onDelete={handleDelete} />
+      <RecentApplications
+        applications={applications}
+        onDelete={handleDelete}
+        onEdit={handleEdit}
+      />
     </div>
   );
 }

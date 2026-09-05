@@ -9,9 +9,6 @@ import "./App.css";
 const DashboardPage = lazy(
   () => import("../pages/DashboardPage/DashboardPage"),
 );
-const ApplicationsPage = lazy(
-  () => import("../pages/ApplicationsPage/ApplicationsPage"),
-);
 const AnalyticsPage = lazy(
   () => import("../pages/AnalyticsPage/AnalyticsPage"),
 );
@@ -31,7 +28,6 @@ export default function App() {
       >
         <Routes>
           <Route path="/" element={<DashboardPage />} />
-          <Route path="/applications" element={<ApplicationsPage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />
         </Routes>
       </Suspense>

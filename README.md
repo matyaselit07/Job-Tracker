@@ -1,6 +1,6 @@
 # JobTracker
 
-JobTracker is a lightweight React + Vite application for managing job applications. It presents a simple dashboard experience with page-based navigation, visual summaries, and a responsive layout for desktop and mobile screens.
+JobTracker is a React + Vite application for tracking job applications. The dashboard provides application summaries, filtering, editing, deletion, and a form for adding applications. Analytics presents application status and timeline charts.
 
 ## Live Demo
 
@@ -8,16 +8,19 @@ JobTracker is a lightweight React + Vite application for managing job applicatio
 
 ## Main functions
 
-The project showcases:
+The application includes:
 
-- Dashboard summary of applications, interviews, and offers
-- Simple tab-style navigation implemented with component state (no react-router)
-- Component-based structure (Header, Summary, pages)
-- Mobile-first responsive layout and basic accessibility considerations
+- Dashboard summary of total applications, interviews, and offers
+- Add, edit, delete, and filter application records
+- Browser local storage persistence so application data survives page refreshes
+- Analytics page with status pie chart and applications-over-time bar chart
+- Responsive layout for desktop and mobile screens
+- Component-based structure with shared header, footer, summary, and application list components
 
 ## Preview
 
 ![Screenshot](/src/assets/job-tracker-screenshot.png)
+![Screenshot](/src/assets/job-tracker-screenshot-1.png)
 
 ## Project Structure
 
@@ -26,27 +29,32 @@ The application is organized into a clear component-based structure to keep the 
 ```text
 src/
 ├── app/
+│   ├── App.jsx
+│   └── App.css
 ├── assets/
-├── components/
+├── Components/
 │   ├── Footer/
 │   ├── Header/
 │   ├── RecentApplications/
 │   └── Summary/
+├── data/
+│   └── applications.js
 ├── pages/
 │   ├── AnalyticsPage/
-│   ├── ApplicationsPage/
 │   └── DashboardPage/
 └── main.jsx
 ```
 
-## Technologies and Resources
+## Technologies
 
 - React 19
 - Vite
-- CSS for styling
-- gh-pages for deployment
-
-<!-- ### Images -->
+- React Router with `BrowserRouter`, `Routes`, and `Route`
+- Recharts for the analytics pie and bar charts
+- Browser `localStorage` for persistent application data
+- CSS for styling and responsive layout
+- Oxlint for linting
+- GitHub Pages with `gh-pages` for deployment
 
 ### Icons
 
@@ -63,6 +71,4 @@ src/
 
 ## Description
 
-This is my first React web application deployed on GitHub Pages.
-My main focus was understanding the deployment workflow and getting the application online successfully.
-I will continue to update, improve, and expand this project.
+This project was created to practice React application structure, client-side routing, local data persistence, form handling, reusable components, responsive design, and deployment to GitHub Pages.

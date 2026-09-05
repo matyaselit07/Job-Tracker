@@ -15,7 +15,6 @@ export default function Header() {
 
   const navItems = [
     { label: "Dashboard", path: "/" },
-    { label: "Applications", path: "/applications" },
     { label: "Analytics", path: "/analytics" },
   ];
 

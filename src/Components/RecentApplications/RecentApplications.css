@@ -17,7 +17,10 @@ select {
   padding: 0.5rem;
   margin: 0.5rem 1rem;
   border: 1px solid gray;
-  border-radius: 8px 8px 0 0;
+}
+
+option {
+  font-weight: 600;
 }
 
 .section-center {
@@ -25,9 +28,9 @@ select {
   grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
   gap: 1rem;
   align-items: center;
-  padding: 1rem;
   color: gray;
   background-color: var(--color-primary);
+  padding: 1rem;
 }
 
 .section-center > p {
@@ -54,7 +57,51 @@ select {
   width: auto;
   text-align: center;
   margin: 0;
-  
+}
+
+.editing-application input,
+.editing-application select {
+  width: 90%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0.55rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.application-edit-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.application-edit-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.application-edit-actions button,
+.edit-button {
+  background: var(--color-primary);
+  font-weight: 600;
+  padding: 0.5rem;
+  margin: 0 0.4rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.application-edit-actions button:hover,
+.edit-button:hover,
+select:hover {
+  box-shadow: 2px 2px 5px gray;
+  transition: 0.3s;
+}
+
+.delete-button:hover {
+  color: red;
+  transition: 0.5s;
 }
 
 h3 {
@@ -73,7 +120,7 @@ h3 {
 
 .status-pill.rejected {
   background-color: rgb(255, 158, 158);
-  color: rgb(155, 0, 0);
+  color: rgb(183, 0, 0);
 }
 
 .status-pill.applied {
@@ -89,21 +136,6 @@ h3 {
 .status-pill.offer {
   background-color: rgb(0, 195, 0);
   color: green;
-}
-
-/* Delete button */
-.delete-button {
-  color: rgb(130, 0, 0);
-  font-size: 1.5rem;
-  line-height: 1;
-  margin: 1rem;
-  border: none;
-  /* background: transparent; */
-  cursor: pointer;
-}
-
-.delete-button:hover {
-  opacity: 0.6;
 }
 
 /* Responsivity */
@@ -123,12 +155,6 @@ h3 {
   .section-center {
     display: none;
   }
-
-  /* .section-center-status,
-  .section-bottom-list li div {
-    display: none;
-  } */
-
   .section-bottom-list li {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;

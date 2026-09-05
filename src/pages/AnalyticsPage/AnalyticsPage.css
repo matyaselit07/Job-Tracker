@@ -20,18 +20,50 @@
 }
 
 .analytics-chart-card h2 {
-  margin: 1rem 0;
   font-size: 1.1rem;
+  text-align: center;
+  background-color: rgb(184, 184, 184);
+  max-width: 300px;
+  padding: 0.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+}
+
+.recharts-responseive-container {
+  background-color: aqua;
+}
+
+svg {
+  margin-left: -1rem;
+}
+
+@media (max-width: 600px) {
+  .analytics-chart-card {
+    width: 300px;
+    padding: 0.5rem;
+  }
+
+  .mobile-status-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    font-weight: bold;
+    background-color: rgb(170, 170, 170);
+    padding: 1rem 0.5rem;
+    border-radius: 20px;
+  }
 }
 
 @media (max-width: 1600px) {
   .analytics-charts {
     flex-direction: column;
   }
-}
-
-@media (max-width: 2000px) {
-  .analytics-page-div {
+  .analytics-chart-card {
     width: 100%;
+    padding: 0;
+    margin: auto;
   }
 }

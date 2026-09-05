@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "./RecentApplications.css";
 
-export default function RecentApplications({ applications, onDelete }) {
+const statuses = ["Applied", "Interview", "Offer", "Rejected"];
+
+export default function RecentApplications({ applications, onDelete, onEdit }) {
   const [filter, setFilter] = useState("All");
+  const [editingId, setEditingId] = useState(null);
+  const [draft, setDraft] = useState(null);
 
   function getStatusClass(status) {
     switch (status) {
@@ -19,7 +23,84 @@ export default function RecentApplications({ applications, onDelete }) {
     }
   }
 
+  function startEditing(application) {
+    setEditingId(application.id);
+    setDraft({ ...application });
+  }
+
+  function updateDraft(field, value) {
+    setDraft((currentDraft) => ({ ...currentDraft, [field]: value }));
+  }
+
+  function saveEdit() {
+    onEdit(draft);
+    setEditingId(null);
+    setDraft(null);
+  }
+
+  function cancelEdit() {
+    setEditingId(null);
+    setDraft(null);
+  }
+
+  function deleteEditingApplication() {
+    onDelete(editingId);
+    cancelEdit();
+  }
+
   function ApplicationCard({ application }) {
+    if (editingId === application.id) {
+      return (
+        <li className="editing-application">
+          <input
+            value={draft.company}
+            onChange={(event) => updateDraft("company", event.target.value)}
+            aria-label="Company"
+          />
+          <input
+            value={draft.position}
+            onChange={(event) => updateDraft("position", event.target.value)}
+            aria-label="Position"
+          />
+          <input
+            type="date"
+            value={draft.date}
+            onChange={(event) => updateDraft("date", event.target.value)}
+            aria-label="Date"
+          />
+          <div className="application-edit-status">
+            <select
+              value={draft.status}
+              onChange={(event) => updateDraft("status", event.target.value)}
+              aria-label="Status"
+            >
+              {statuses.map((status) => (
+                <option key={status} value={status}>
+                  {status}
+                </option>
+              ))}
+            </select>
+            <div className="application-edit-actions">
+              <button type="button" onClick={saveEdit}>
+                Save
+              </button>
+              <button type="button" onClick={cancelEdit}>
+                Cancel
+              </button>
+              <button
+                className="delete-button"
+                type="button"
+                onClick={deleteEditingApplication}
+                aria-label={`Delete ${draft.company} application`}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </li>
+      );
+    }
+
     return (
       <li>
         <h3>{application.company}</h3>
@@ -30,11 +111,11 @@ export default function RecentApplications({ applications, onDelete }) {
             {application.status}
           </p>
           <button
-            className="delete-button"
-            onClick={() => onDelete(application.id)}
-            aria-label={`Delete ${application.company} application`}
+            className="edit-button"
+            type="button"
+            onClick={() => startEditing(application)}
           >
-            X
+            Edit
           </button>
         </div>
       </li>

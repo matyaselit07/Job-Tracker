@@ -1,5 +1,6 @@
 import "./AnalyticsPage.css";
 
+import { useEffect, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -16,13 +17,25 @@ import {
 import { initialApplications } from "../../data/applications";
 
 const statusColors = {
-  Applied: "#7dd3fc",
-  Interview: "#c4b5fd",
-  Offer: "#86efac",
-  Rejected: "#fca5a5",
+  Applied: "rgb(12, 65, 138)",
+  Interview: "rgb(127, 127, 1)",
+  Offer: "green",
+  Rejected: "rgb(183, 0, 0)",
 };
 
 export default function AnalyticsPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 600px)");
+    const updateViewport = () => setIsMobile(mediaQuery.matches);
+
+    updateViewport();
+    mediaQuery.addEventListener("change", updateViewport);
+
+    return () => mediaQuery.removeEventListener("change", updateViewport);
+  }, []);
+
   const applicationsByDate = [...initialApplications]
     .sort((firstApplication, secondApplication) =>
       firstApplication.date.localeCompare(secondApplication.date),
@@ -61,7 +74,9 @@ export default function AnalyticsPage() {
                 cx="50%"
                 cy="45%"
                 outerRadius={115}
-                label={({ name, value }) => `${name}: ${value}`}
+                label={
+                  isMobile ? false : ({ name, value }) => `${name}: ${value}`
+                }
               >
                 {applicationsByStatus.map((entry) => (
                   <Cell key={entry.name} fill={statusColors[entry.name]} />
@@ -71,6 +86,13 @@ export default function AnalyticsPage() {
               <Legend />
             </PieChart>
           </ResponsiveContainer>
+          <div className="mobile-status-summary">
+            {applicationsByStatus.map(({ name, value }) => (
+              <span key={name} style={{ color: statusColors[name] }}>
+                {name}: {value}
+              </span>
+            ))}
+          </div>
         </section>
 
         <section className="analytics-chart-card">
