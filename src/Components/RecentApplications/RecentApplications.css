@@ -141,13 +141,15 @@
 /* Responsivity */
 @media (max-width: 750px) {
   .section-top {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
   .section-top div {
-    width: 0px;
+    width: auto;
   }
   .section-top select {
-    display: none;
+    margin: 0.5rem 0 0;
   }
 }
 
