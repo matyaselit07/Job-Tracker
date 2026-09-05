@@ -66,7 +66,7 @@ export default function AnalyticsPage() {
       <div className="analytics-charts">
         <section className="analytics-chart-card">
           <h2>Applications by Status</h2>
-          <ResponsiveContainer width="100%" height={360}>
+          <ResponsiveContainer width="100%" height={420}>
             <PieChart>
               <Pie
                 data={applicationsByStatus}
